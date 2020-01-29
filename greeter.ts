@@ -150,3 +150,171 @@
 
 // let strLength: number = (someValue as string).length;
 
+// type compatibality
+
+// interface Named {
+//   name: string;
+// }
+
+// class Person {
+//   name: String;
+// }
+
+// let p: Named;
+
+// // ok, because of structural typing
+
+// p = new Person();
+
+// interface Named {
+//   name: string;
+// }
+
+// let x: Named;
+
+// let y = { name: "Alice", location: "Seattle" };
+
+// x = y;
+
+// function greet(n: Named) {
+//   console.log("Hello, " + n.name);
+// }
+
+// greet(y); // ok
+
+// let x = (a: number) => 0;
+// let y = (b: number, s: string) => 0;
+
+// y = x;
+// x = y;
+
+// enum EventType {
+//   Mouse,
+//   Keyboard
+// }
+
+// interface Event {
+//   timestamp: number;
+// }
+// interface MouseEvent extends Event {
+//   x: number;
+//   y: number;
+// }
+// interface KeyEvent extends Event {
+//   KeyCode: number;
+// }
+
+// function listenEvent(eventType: EventType, handler: (n: Event) => void) {}
+
+// Javascript essential
+
+// const userAccount = {
+//   name: "Kieron",
+//   id: 0
+// };
+
+// const pie = {
+//   type: "Apple"
+// };
+
+// const purchaseOrder = {
+//   owner: userAccount,
+//   item: pie
+// };
+
+// console.log(purchaseOrder.item.type);
+
+// const allOrders = [purchaseOrder];
+
+// const firstOrder = allOrders[0];
+// console.log(firstOrder.item.type);
+
+// js function ess
+
+// function addOldSchool(x, y) {
+//   return x + y;
+// }
+
+// const anonymousOldSchoolFunction = function(x, y) {
+//   return x + y;
+// };
+
+// const addFunction = (x, y) => {
+//   return x + y;
+// };
+
+// const add1 = (x: any, y: any) => {
+//   return x + y;
+// };
+
+// add1("hello", 23);
+
+// Code Flow
+
+// const user = [{ name: "Ah" }, { name: "Gemma" }, { name: "Tsin" }];
+
+// const ah = users.find(u => u.name === "ah");
+
+// if (ah) {
+//   ah;
+// } else {
+//   ah;
+// }
+
+// const identifiers = ["Hello", "World", 24, 29];
+
+// const randomIdentifier = identifiers[0];
+// if (typeof randomIdentifier === "number") {
+//   randomIdentifier;
+// } else {
+//   randomIdentifier;
+// }
+
+// const func = () => ":wave:";
+// const asyncFunc = async () => ":wave:";
+
+// const myString = func();
+// const myPromiseString = asyncFunc();
+
+// myString.length;
+
+// myPromiseString.length;
+
+// const myWrapperFunction = async () => {
+//   const myString = func();
+//   const myResolvePromiseString = await asyncFunc();
+//   myString.length;
+//   myResolvePromiseString.length;
+// };
+
+// const myThrowingFunction = async () => {
+//   throw new Error("Do no call this");
+// };
+
+// const asyncFunctionCatching = async () => {
+//   const myReturnValue = "Hello World";
+//   try {
+//     await myThrowingFunction();
+//   } catch (error) {
+//     console.error("myThrowingFunction failed", error);
+//   }
+//   return myReturnValue;
+// };
+
+// const exampleSquareRootFunction = async (input: any) => {
+//   if (isNaN(input)) {
+//     throw new Error("Only numbers are accepted");
+//   }
+
+//   if (input < 0) {
+//     return { success: false, message: "Cannot square root negative" };
+//   } else {
+//     return { success: true, value: Math.sqrt(input) };
+//   }
+// };
+// const checkSquareRoot = async (value: number) => {
+//   const response = await exampleSquareRootFunction(value);
+//   if (response.success) {
+//     response.value;
+//   }
+// };
